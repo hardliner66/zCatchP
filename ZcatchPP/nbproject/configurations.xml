@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="../src" name="src">
+      <df name="base">
+        <df name="tl">
+          <in>algorithm.h</in>
+          <in>allocator.h</in>
+          <in>array.h</in>
+          <in>base.h</in>
+          <in>range.h</in>
+          <in>sorted_array.h</in>
+          <in>string.h</in>
+          <in>threading.h</in>
+        </df>
+        <in>detect.h</in>
+        <in>math.h</in>
+        <in>system.c</in>
+        <in>system.h</in>
+        <in>vmath.h</in>
+      </df>
+      <df name="engine">
+        <df name="client">
+          <in>backend_sdl.cpp</in>
+          <in>backend_sdl.h</in>
+          <in>client.cpp</in>
+          <in>client.h</in>
+          <in>friends.cpp</in>
+          <in>friends.h</in>
+          <in>graphics.cpp</in>
+          <in>graphics.h</in>
+          <in>graphics_threaded.cpp</in>
+          <in>graphics_threaded.h</in>
+          <in>input.cpp</in>
+          <in>input.h</in>
+          <in>keynames.h</in>
+          <in>serverbrowser.cpp</in>
+          <in>serverbrowser.h</in>
+          <in>sound.cpp</in>
+          <in>sound.h</in>
+          <in>text.cpp</in>
+        </df>
+        <df name="external">
+          <df name="pnglite">
+            <in>pnglite.c</in>
+            <in>pnglite.h</in>
+          </df>
+          <df name="wavpack">
+            <in>arm.S</in>
+            <in>arml.S</in>
+            <in>bits.c</in>
+            <in>coldfire.S</in>
+            <in>float.c</in>
+            <in>metadata.c</in>
+            <in>unpack.c</in>
+            <in>wavpack.h</in>
+            <in>words.c</in>
+            <in>wputils.c</in>
+          </df>
+          <df name="zlib">
+            <in>adler32.c</in>
+            <in>compress.c</in>
+            <in>crc32.c</in>
+            <in>crc32.h</in>
+            <in>deflate.c</in>
+            <in>deflate.h</in>
+            <in>infback.c</in>
+            <in>inffast.c</in>
+            <in>inffast.h</in>
+            <in>inffixed.h</in>
+            <in>inflate.c</in>
+            <in>inflate.h</in>
+            <in>inftrees.c</in>
+            <in>inftrees.h</in>
+            <in>trees.c</in>
+            <in>trees.h</in>
+            <in>uncompr.c</in>
+            <in>zconf.h</in>
+            <in>zlib.h</in>
+            <in>zutil.c</in>
+            <in>zutil.h</in>
+          </df>
+        </df>
+        <df name="server">
+          <in>register.cpp</in>
+          <in>register.h</in>
+          <in>server.cpp</in>
+          <in>server.h</in>
+        </df>
+        <df name="shared">
+          <in>compression.cpp</in>
+          <in>compression.h</in>
+          <in>config.cpp</in>
+          <in>config.h</in>
+          <in>config_variables.h</in>
+          <in>console.cpp</in>
+          <in>console.h</in>
+          <in>datafile.cpp</in>
+          <in>datafile.h</in>
+          <in>demo.cpp</in>
+          <in>demo.h</in>
+          <in>econ.cpp</in>
+          <in>econ.h</in>
+          <in>engine.cpp</in>
+          <in>filecollection.cpp</in>
+          <in>filecollection.h</in>
+          <in>huffman.cpp</in>
+          <in>huffman.h</in>
+          <in>jobs.cpp</in>
+          <in>jobs.h</in>
+          <in>kernel.cpp</in>
+          <in>linereader.cpp</in>
+          <in>linereader.h</in>
+          <in>map.cpp</in>
+          <in>mapchecker.cpp</in>
+          <in>mapchecker.h</in>
+          <in>masterserver.cpp</in>
+          <in>memheap.cpp</in>
+          <in>memheap.h</in>
+          <in>message.h</in>
+          <in>netban.cpp</in>
+          <in>netban.h</in>
+          <in>network.cpp</in>
+          <in>network.h</in>
+          <in>network_client.cpp</in>
+          <in>network_conn.cpp</in>
+          <in>network_console.cpp</in>
+          <in>network_console_conn.cpp</in>
+          <in>network_server.cpp</in>
+          <in>packer.cpp</in>
+          <in>packer.h</in>
+          <in>protocol.h</in>
+          <in>ringbuffer.cpp</in>
+          <in>ringbuffer.h</in>
+          <in>snapshot.cpp</in>
+          <in>snapshot.h</in>
+          <in>storage.cpp</in>
+        </df>
+        <in>client.h</in>
+        <in>config.h</in>
+        <in>console.h</in>
+        <in>demo.h</in>
+        <in>editor.h</in>
+        <in>engine.h</in>
+        <in>friends.h</in>
+        <in>graphics.h</in>
+        <in>input.h</in>
+        <in>kernel.h</in>
+        <in>keys.h</in>
+        <in>map.h</in>
+        <in>masterserver.h</in>
+        <in>message.h</in>
+        <in>server.h</in>
+        <in>serverbrowser.h</in>
+        <in>sound.h</in>
+        <in>storage.h</in>
+        <in>textrender.h</in>
+      </df>
+      <df name="game">
+        <df name="client">
+          <df name="components">
+            <in>binds.cpp</in>
+            <in>binds.h</in>
+            <in>broadcast.cpp</in>
+            <in>broadcast.h</in>
+            <in>camera.cpp</in>
+            <in>camera.h</in>
+            <in>chat.cpp</in>
+            <in>chat.h</in>
+            <in>console.cpp</in>
+            <in>console.h</in>
+            <in>controls.cpp</in>
+            <in>controls.h</in>
+            <in>countryflags.cpp</in>
+            <in>countryflags.h</in>
+            <in>damageind.cpp</in>
+            <in>damageind.h</in>
+            <in>debughud.cpp</in>
+            <in>debughud.h</in>
+            <in>effects.cpp</in>
+            <in>effects.h</in>
+            <in>emoticon.cpp</in>
+            <in>emoticon.h</in>
+            <in>flow.cpp</in>
+            <in>flow.h</in>
+            <in>hud.cpp</in>
+            <in>hud.h</in>
+            <in>items.cpp</in>
+            <in>items.h</in>
+            <in>killmessages.cpp</in>
+            <in>killmessages.h</in>
+            <in>mapimages.cpp</in>
+            <in>mapimages.h</in>
+            <in>maplayers.cpp</in>
+            <in>maplayers.h</in>
+            <in>menus.cpp</in>
+            <in>menus.h</in>
+            <in>menus_browser.cpp</in>
+            <in>menus_demo.cpp</in>
+            <in>menus_ingame.cpp</in>
+            <in>menus_settings.cpp</in>
+            <in>motd.cpp</in>
+            <in>motd.h</in>
+            <in>nameplates.cpp</in>
+            <in>nameplates.h</in>
+            <in>particles.cpp</in>
+            <in>particles.h</in>
+            <in>players.cpp</in>
+            <in>players.h</in>
+            <in>scoreboard.cpp</in>
+            <in>scoreboard.h</in>
+            <in>skins.cpp</in>
+            <in>skins.h</in>
+            <in>sounds.cpp</in>
+            <in>sounds.h</in>
+            <in>spectator.cpp</in>
+            <in>spectator.h</in>
+            <in>voting.cpp</in>
+            <in>voting.h</in>
+          </df>
+          <in>animstate.cpp</in>
+          <in>animstate.h</in>
+          <in>component.h</in>
+          <in>gameclient.cpp</in>
+          <in>gameclient.h</in>
+          <in>lineinput.cpp</in>
+          <in>lineinput.h</in>
+          <in>render.cpp</in>
+          <in>render.h</in>
+          <in>render_map.cpp</in>
+          <in>ui.cpp</in>
+          <in>ui.h</in>
+        </df>
+        <df name="editor">
+          <in>auto_map.cpp</in>
+          <in>auto_map.h</in>
+          <in>editor.cpp</in>
+          <in>editor.h</in>
+          <in>io.cpp</in>
+          <in>layer_game.cpp</in>
+          <in>layer_quads.cpp</in>
+          <in>layer_tiles.cpp</in>
+          <in>popups.cpp</in>
+        </df>
+        <df name="generated">
+          <in>client_data.cpp</in>
+          <in>client_data.h</in>
+          <in>nethash.cpp</in>
+          <in>protocol.cpp</in>
+          <in>protocol.h</in>
+          <in>server_data.cpp</in>
+          <in>server_data.h</in>
+        </df>
+        <df name="server">
+          <df name="entities">
+            <in>character.cpp</in>
+            <in>character.h</in>
+            <in>flag.cpp</in>
+            <in>flag.h</in>
+            <in>laser.cpp</in>
+            <in>laser.h</in>
+            <in>pickup.cpp</in>
+            <in>pickup.h</in>
+            <in>projectile.cpp</in>
+            <in>projectile.h</in>
+          </df>
+          <df name="gamemodes">
+            <in>ctf.cpp</in>
+            <in>ctf.h</in>
+            <in>dm.cpp</in>
+            <in>dm.h</in>
+            <in>mod.cpp</in>
+            <in>mod.h</in>
+            <in>tdm.cpp</in>
+            <in>tdm.h</in>
+            <in>zcatch.cpp</in>
+            <in>zcatch.h</in>
+          </df>
+          <in>entity.cpp</in>
+          <in>entity.h</in>
+          <in>eventhandler.cpp</in>
+          <in>eventhandler.h</in>
+          <in>gamecontext.cpp</in>
+          <in>gamecontext.h</in>
+          <in>gamecontroller.cpp</in>
+          <in>gamecontroller.h</in>
+          <in>gameworld.cpp</in>
+          <in>gameworld.h</in>
+          <in>player.cpp</in>
+          <in>player.h</in>
+        </df>
+        <in>collision.cpp</in>
+        <in>collision.h</in>
+        <in>gamecore.cpp</in>
+        <in>gamecore.h</in>
+        <in>layers.cpp</in>
+        <in>layers.h</in>
+        <in>localization.cpp</in>
+        <in>localization.h</in>
+        <in>mapitems.h</in>
+        <in>tuning.h</in>
+        <in>variables.h</in>
+        <in>version.h</in>
+        <in>voting.h</in>
+      </df>
+      <df name="mastersrv">
+        <in>mastersrv.cpp</in>
+        <in>mastersrv.h</in>
+      </df>
+      <df name="osxlaunch">
+        <in>client.h</in>
+        <in>client.m</in>
+        <in>server.m</in>
+      </df>
+      <df name="tools">
+        <in>crapnet.cpp</in>
+        <in>dilate.cpp</in>
+        <in>fake_server.cpp</in>
+        <in>map_resave.cpp</in>
+        <in>map_version.cpp</in>
+        <in>packetgen.cpp</in>
+        <in>tileset_borderadd.cpp</in>
+        <in>tileset_borderfix.cpp</in>
+        <in>tileset_borderrem.cpp</in>
+        <in>tileset_borderset.cpp</in>
+      </df>
+      <df name="versionsrv">
+        <in>mapversions.h</in>
+        <in>versionsrv.cpp</in>
+        <in>versionsrv.h</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>../make.mk</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>../src</Elem>
+  </sourceRootList>
+  <projectmakefile>../make.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>..</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f make.mk</buildCommand>
+          <cleanCommand>${MAKE} -f make.mk clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="../src/base/detect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/math.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/system.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../src/base/system.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/algorithm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/allocator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/array.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/range.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/sorted_array.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/tl/threading.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/base/vmath.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/backend_sdl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/client/backend_sdl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/client.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/client/client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/friends.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/client/friends.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/graphics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/client/graphics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/graphics_threaded.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/client/graphics_threaded.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/client/input.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/client/input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/keynames.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/serverbrowser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/client/serverbrowser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/client/sound.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/client/sound.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/client/text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/console.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/demo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/editor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/engine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/external/pnglite/pnglite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/pnglite/pnglite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/arm.S"
+            ex="false"
+            tool="4"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/arml.S"
+            ex="false"
+            tool="4"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/bits.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/coldfire.S"
+            ex="false"
+            tool="4"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/float.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/metadata.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/unpack.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/wavpack.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/words.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/wavpack/wputils.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/adler32.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/compress.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/crc32.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/crc32.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/deflate.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/deflate.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/infback.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inffast.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inffast.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inffixed.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inflate.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inflate.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inftrees.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/inftrees.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/trees.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/trees.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/uncompr.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/zconf.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/zlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/zutil.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/external/zlib/zutil.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/friends.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/graphics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/kernel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/keys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/masterserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/server.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/server/register.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/server/register.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/server/server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/server/server.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/serverbrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/compression.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/compression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/config.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/config_variables.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/console.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/console.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/datafile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/datafile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/demo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/demo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/econ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/econ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/engine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/filecollection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/filecollection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/huffman.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/huffman.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/jobs.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/jobs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/kernel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/linereader.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/linereader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/map.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/mapchecker.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/mapchecker.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/masterserver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/memheap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/memheap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/netban.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/netban.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network_client.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network_conn.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network_console.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network_console_conn.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/network_server.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/packer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/packer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/protocol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/ringbuffer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/engine/shared/ringbuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/snapshot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/snapshot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/shared/storage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/engine/sound.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/storage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/engine/textrender.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/client/animstate.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/client/animstate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/client/component.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/client/components/binds.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/binds.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/broadcast.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/broadcast.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/camera.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/camera.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/chat.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/chat.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/console.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/console.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/controls.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/controls.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/countryflags.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/countryflags.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/damageind.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/damageind.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/debughud.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/debughud.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/effects.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/effects.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/emoticon.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/emoticon.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/flow.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/flow.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/hud.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/hud.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/items.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/items.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/killmessages.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/killmessages.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/mapimages.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/mapimages.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/maplayers.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/maplayers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/menus.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/menus.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/menus_browser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/menus_demo.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/menus_ingame.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/menus_settings.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/motd.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/motd.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/nameplates.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/nameplates.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/particles.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/particles.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/players.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/players.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/scoreboard.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/scoreboard.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/skins.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/skins.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/sounds.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/sounds.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/spectator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/spectator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/voting.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/components/voting.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/client/gameclient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/client/gameclient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/client/lineinput.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/client/lineinput.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/client/render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/client/render.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/client/render_map.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/client/ui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/client/ui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/collision.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/collision.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/editor/auto_map.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/editor/auto_map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/editor/editor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/editor/editor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/editor/io.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/editor/layer_game.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/editor/layer_quads.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/editor/layer_tiles.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/editor/popups.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/gamecore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/gamecore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/generated/client_data.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/generated/client_data.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/generated/nethash.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/generated/protocol.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/generated/protocol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/generated/server_data.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/generated/server_data.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/layers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/layers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/localization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/localization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/mapitems.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/character.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/character.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/flag.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/flag.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/laser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/laser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/pickup.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/pickup.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/projectile.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entities/projectile.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/server/entity.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/eventhandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/eventhandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamecontext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamecontext.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamecontroller.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamecontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/ctf.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/ctf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/dm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/dm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/mod.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/mod.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/tdm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/tdm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/zcatch.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gamemodes/zcatch.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../src/game/server/gameworld.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/server/gameworld.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/server/player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/game/server/player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/tuning.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/variables.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/version.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/game/voting.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/mastersrv/mastersrv.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/mastersrv/mastersrv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/osxlaunch/client.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/osxlaunch/client.m" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../src/osxlaunch/server.m" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../src/tools/crapnet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/dilate.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/fake_server.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/map_resave.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/map_version.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/packetgen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/tileset_borderadd.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/tileset_borderfix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/tileset_borderrem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/tools/tileset_borderset.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/versionsrv/mapversions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../src/versionsrv/versionsrv.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../src/versionsrv/versionsrv.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
