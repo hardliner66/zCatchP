@@ -122,5 +122,7 @@ MACRO_CONFIG_INT(SvAutoIdm, sv_auto_idm, 0, 0, 1, CFGFLAG_SERVER, "1 - switch ba
 MACRO_CONFIG_INT(SvzCatchMinPlayers, sv_min_players, 4, 1, 17, CFGFLAG_SERVER, "How many active Players, before Gamemode changes from iDM to zCatch; 17 = only iDM")
 MACRO_CONFIG_INT(SvzCatchPlusMode, sv_plus_mode, 2, 0, 2, CFGFLAG_SERVER, "0 - off; 1 - simple; 2 - strict")
 MACRO_CONFIG_INT(SvzCatchPlusFreezeTime, sv_plus_freeze_time, 4, 1, 10, CFGFLAG_SERVER, "Freeze Time when hit")
-MACRO_CONFIG_INT(SvzCatchPlusMinDiff, sv_plus_min_height_diff, 10, 1, 50, CFGFLAG_SERVER, "Minimal height difference before player can kill")
+MACRO_CONFIG_INT(SvzCatchPlusMinDiff, sv_plus_min_height_diff, 10, 1, 50, CFGFLAG_SERVER, "Minimum height difference before player can kill")
+MACRO_CONFIG_INT(SvzCatchPlusMinMap, sv_plus_min_map, 0, 0, 1, CFGFLAG_SERVER, "Min play time is needed, bevor map can be changed")
+MACRO_CONFIG_INT(SvzCatchPlusMinMapTime, sv_plus_min_map_time, 15, 0, 1440, CFGFLAG_SERVER, "Minimum time before the map can be changed")
 #endif

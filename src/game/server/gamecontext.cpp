@@ -296,28 +296,63 @@ void CGameContext::SendBroadcast(const char *pText, int ClientID)
 //
 void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char *pReason)
 {
+	bool doVote = true;
 	// check if a vote is already running
 	if(m_VoteCloseTime)
 		return;
 
-	// reset votes
-	m_VoteEnforce = VOTE_ENFORCE_UNKNOWN;
-	for(int i = 0; i < MAX_CLIENTS; i++)
+	int time =0;
+	CGameContext *pSelf = this;
+
+	if (pSelf && pDesc[0] == '*')
 	{
-		if(m_apPlayers[i])
+
+		// time = (g_Config.m_SvzCatchPlusMinMapTime * 60 * pSelf->Server()->TickSpeed()) - (pSelf->Server()->Tick() - m_pController->RoundStartTick());
+		time = (g_Config.m_SvzCatchPlusMinMapTime * 60) -  (pSelf->Server()->Tick()-m_pController->RoundStartTick())/pSelf->Server()->TickSpeed();
+		if (time < 0)
+			time = 0;
+		if ((g_Config.m_SvzCatchPlusMinMap == 1 && time == 0) || g_Config.m_SvzCatchPlusMinMap == 0)
 		{
-			m_apPlayers[i]->m_Vote = 0;
-			m_apPlayers[i]->m_VotePos = 0;
+			doVote = true;
+		}
+		else
+		{
+			doVote = false;
 		}
 	}
 
-	// start vote
-	m_VoteCloseTime = time_get() + time_freq()*25;
-	str_copy(m_aVoteDescription, pDesc, sizeof(m_aVoteDescription));
-	str_copy(m_aVoteCommand, pCommand, sizeof(m_aVoteCommand));
-	str_copy(m_aVoteReason, pReason, sizeof(m_aVoteReason));
-	SendVoteSet(-1);
-	m_VoteUpdate = true;
+	if (doVote)
+	{
+				/*char aBuf[512];
+		str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d Minutes and %d Seconds Remaining. : %s :", g_Config.m_SvzCatchPlusMinMapTime ,time/60,time%60,myCommand);
+		SendChat(-1, CGameContext::CHAT_ALL, aBuf);*/
+		// reset votes
+		m_VoteEnforce = VOTE_ENFORCE_UNKNOWN;
+		for(int i = 0; i < MAX_CLIENTS; i++)
+		{
+			if(m_apPlayers[i])
+			{
+				m_apPlayers[i]->m_Vote = 0;
+				m_apPlayers[i]->m_VotePos = 0;
+			}
+		}
+
+		// start vote
+		m_VoteCloseTime = time_get() + time_freq()*25;
+		str_copy(m_aVoteDescription, pDesc, sizeof(m_aVoteDescription));
+		str_copy(m_aVoteCommand, pCommand, sizeof(m_aVoteCommand));
+		str_copy(m_aVoteReason, pReason, sizeof(m_aVoteReason));
+      
+		SendVoteSet(-1);
+		m_VoteUpdate = true;
+	}
+	else
+	{
+		EndVote();
+		char aBuf[512];
+		str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d Minutes and %d Seconds Remaining.", g_Config.m_SvzCatchPlusMinMapTime ,time/60,time%60);
+		SendChat(-1, CGameContext::CHAT_ALL, aBuf);
+	}
 }
 
 

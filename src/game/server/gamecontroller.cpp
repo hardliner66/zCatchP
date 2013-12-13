@@ -732,3 +732,9 @@ int IGameController::ClampTeam(int Team)
 		return Team&1;
 	return 0;
 }
+
+
+int IGameController::RoundStartTick()
+{
+	return m_RoundStartTick;
+}

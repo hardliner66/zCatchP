@@ -63,6 +63,8 @@ protected:
 public:
 	const char *m_pGameType;
 
+	int RoundStartTick();
+
 	bool IsTeamplay() const;
 	bool IsGameOver() const { return m_GameOverTick != -1; }
 
