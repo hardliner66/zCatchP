@@ -15,6 +15,9 @@
 #include "gameworld.h"
 #include "player.h"
 
+#include <ctime>
+#include <atltime.h>
+
 #define MAX_MUTES 35
 #define ZCATCH_VERSION "0.4.8 BETA"
 
@@ -47,6 +50,8 @@ class CGameContext : public IGameServer
 	CCollision m_Collision;
 	CNetObjHandler m_NetObjHandler;
 	CTuningParams m_Tuning;
+  
+  time_t m_LastMapVote;
 
 	static void ConTuneParam(IConsole::IResult *pResult, void *pUserData);
 	static void ConTuneReset(IConsole::IResult *pResult, void *pUserData);

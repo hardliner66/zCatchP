@@ -9,13 +9,14 @@
 #include "gamecontroller.h"
 #include "gamecontext.h"
 
-
 IGameController::IGameController(class CGameContext *pGameServer)
 {
 	m_pGameServer = pGameServer;
 	m_pServer = m_pGameServer->Server();
 	m_pGameType = "unknown";
-
+	
+  
+	
 	//
 	DoWarmup(g_Config.m_SvWarmup);
 	m_GameOverTick = -1;
@@ -225,6 +226,8 @@ void IGameController::StartRound()
 
 void IGameController::ChangeMap(const char *pToMap)
 {
+	
+
 	str_copy(m_aMapWish, pToMap, sizeof(m_aMapWish));
 	EndRound();
 }

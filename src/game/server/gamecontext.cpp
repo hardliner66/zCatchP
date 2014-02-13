@@ -15,7 +15,7 @@
 #include "gamemodes/mod.h"*/
 #include "gamemodes/zcatch.h"
 
-
+//#import <../../../../../../Games/teeworlds-0.6.2-win64/InteropTWServer.tlb> raw_interfaces_only
 
 enum
 {
@@ -28,6 +28,9 @@ void CGameContext::Construct(int Resetting)
 	m_Resetting = 0;
 	m_pServer = 0;
 
+  if (m_LastMapVote == NULL)
+    time ( &m_LastMapVote );
+
 	for(int i = 0; i < MAX_CLIENTS; i++)
 		m_apPlayers[i] = 0;
 
@@ -39,8 +42,10 @@ void CGameContext::Construct(int Resetting)
 	m_LockTeams = 0;
 
 	if(Resetting==NO_RESET)
+  {
 		m_pVoteOptionHeap = new CHeap();
-	
+  }
+
 	for(int i = 0; i < MAX_MUTES; i++)
 		m_aMutes[i].m_aIP[0] = 0;
 }
@@ -52,6 +57,8 @@ CGameContext::CGameContext(int Resetting)
 
 CGameContext::CGameContext()
 {
+  m_LastMapVote = NULL;
+
 	Construct(NO_RESET);
 }
 
@@ -297,37 +304,36 @@ void CGameContext::SendBroadcast(const char *pText, int ClientID)
 void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char *pReason)
 {
 	bool doVote = true;
+  
+  if (m_LastMapVote == NULL)
+  {
+    Console()->Print(IConsole::OUTPUT_LEVEL_STANDARD, "server", "resetting time");
+    time ( &m_LastMapVote );
+    
+  }
 	// check if a vote is already running
 	if(m_VoteCloseTime)
 		return;
 
-	int time =0;
-	CGameContext *pSelf = this;
+	long diff = 0;
 
-	if (pSelf && pDesc[0] == '*')
+  if (g_Config.m_SvzCatchPlusMinMap == 1)
 	{
+    time_t now;
+    time ( &now );
+    
 
-		// time = (g_Config.m_SvzCatchPlusMinMapTime * 60 * pSelf->Server()->TickSpeed()) - (pSelf->Server()->Tick() - m_pController->RoundStartTick());
-		time = (g_Config.m_SvzCatchPlusMinMapTime * 60) -  (pSelf->Server()->Tick()-m_pController->RoundStartTick())/pSelf->Server()->TickSpeed();
-		if (time < 0)
-			time = 0;
-		if ((g_Config.m_SvzCatchPlusMinMap == 1 && time == 0) || g_Config.m_SvzCatchPlusMinMap == 0)
-		{
-			doVote = true;
-		}
-		else
-		{
-			doVote = false;
-		}
-	}
-
+    diff = difftime(now,m_LastMapVote);
+    if (diff/60 < g_Config.m_SvzCatchPlusMinMapTime)
+    {
+      doVote = false;
+    }
+  }
+	
 	if (doVote)
 	{
-				/*char aBuf[512];
-		str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d Minutes and %d Seconds Remaining. : %s :", g_Config.m_SvzCatchPlusMinMapTime ,time/60,time%60,myCommand);
-		SendChat(-1, CGameContext::CHAT_ALL, aBuf);*/
-		// reset votes
-		m_VoteEnforce = VOTE_ENFORCE_UNKNOWN;
+    time ( &m_LastMapVote );
+    m_VoteEnforce = VOTE_ENFORCE_UNKNOWN;
 		for(int i = 0; i < MAX_CLIENTS; i++)
 		{
 			if(m_apPlayers[i])
@@ -350,7 +356,12 @@ void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char
 	{
 		EndVote();
 		char aBuf[512];
-		str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d Minutes and %d Seconds Remaining.", g_Config.m_SvzCatchPlusMinMapTime ,time/60,time%60);
+
+    int seconds_remaining;
+
+    seconds_remaining = g_Config.m_SvzCatchPlusMinMapTime * 60 - diff;
+
+		str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d minutes and %d seconds remaining.", g_Config.m_SvzCatchPlusMinMapTime,seconds_remaining/60,seconds_remaining%60);
 		SendChat(-1, CGameContext::CHAT_ALL, aBuf);
 	}
 }
