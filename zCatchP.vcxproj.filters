@@ -378,6 +378,9 @@
     <ClCompile Include="src\game\server\gamemodes\zcatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\server\gamemodes\iLMS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\base\detect.h">
@@ -783,6 +786,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\osxlaunch\client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\server\gamemodes\iLMS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

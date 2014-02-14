@@ -35,26 +35,35 @@ bool CLaser::HitCharacter(vec2 From, vec2 To)
 	m_From = From;
 	m_Pos = At;
 	m_Energy = -1;
-	if(m_Bounces > 0)
-	{
-		pHit->GetPlayer()->m_Wallshot = true;
-		//pOwnerChar->GetPlayer()->RaiseMultiplier();
-	}
-	if (g_Config.m_SvzCatchPlusMode == 2)
-		m_CanKill = checkPosition(pOwnerChar,pHit) && pHit->m_FreezeTicks > 0;
-		
-//	if(m_Bounces > 0)
-	if(g_Config.m_SvWallshot != 2)
-	{
-		TryKill(pHit);
-	}
-	else
-	{
-		if(m_Bounces > 0)
-		{
-			TryKill(pHit);
-		}
-	}
+
+  if (GameServer()->m_pController->m_pGameType == "iLMS")
+  {
+    m_CanKill = true;
+    TryKill(pHit);
+  }
+  else
+  {
+	  if(m_Bounces > 0)
+	  {
+		  pHit->GetPlayer()->m_Wallshot = true;
+  		//pOwnerChar->GetPlayer()->RaiseMultiplier();
+	  }
+	  if (g_Config.m_SvzCatchPlusMode == 2)
+		  m_CanKill = checkPosition(pOwnerChar,pHit) && pHit->m_FreezeTicks > 0;
+  		
+    // 	if(m_Bounces > 0)
+  	if(g_Config.m_SvWallshot != 2)
+  	{
+  		TryKill(pHit);
+	  }
+	  else
+	  {
+		  if(m_Bounces > 0)
+		  {
+			  TryKill(pHit);
+  		}
+	  }
+  }
 	return true;
 }
 

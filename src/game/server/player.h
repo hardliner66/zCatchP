@@ -16,6 +16,8 @@ public:
 	CPlayer(CGameContext *pGameServer, int ClientID, int Team);
 	~CPlayer();
 
+	time_t m_joinTime;
+
 	void Init(int CID);
 
 	void TryRespawn();

@@ -14,6 +14,7 @@
 #include "gamemodes/ctf.h"
 #include "gamemodes/mod.h"*/
 #include "gamemodes/zcatch.h"
+#include "gamemodes/ilms.h"
 
 //#import <../../../../../../Games/teeworlds-0.6.2-win64/InteropTWServer.tlb> raw_interfaces_only
 
@@ -301,9 +302,10 @@ void CGameContext::SendBroadcast(const char *pText, int ClientID)
 }
 
 //
-void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char *pReason)
+void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char *pReason,CPlayer *pPlayer)
 {
 	bool doVote = true;
+  bool dp = false;
   
   if (m_LastMapVote == NULL)
   {
@@ -316,17 +318,31 @@ void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char
 		return;
 
 	long diff = 0;
+  long diffplayer = 0;
+  //char buf[512];
+  //str_format(buf, strlen("change_map"), pCommand);
 
-  if (g_Config.m_SvzCatchPlusMinMap == 1)
+  //if (g_Config.m_SvzCatchPlusMinMap == 1 && strcomp(buf, "change_map") == 0)
+  if (g_Config.m_SvzCatchPlusMinMap == 1 && str_find_nocase(pCommand, "change_map") == pCommand)
 	{
     time_t now;
     time ( &now );
     
 
     diff = difftime(now,m_LastMapVote);
-    if (diff/60 < g_Config.m_SvzCatchPlusMinMapTime)
+    diffplayer = difftime(now,pPlayer->m_joinTime);
+    if (diffplayer/60 < g_Config.m_SvzCatchPlusMinMapPlayerTime)
     {
       doVote = false;
+      dp = true;
+    }
+    else
+    {
+      if (diff/60 < g_Config.m_SvzCatchPlusMinMapTime)
+      {
+        doVote = false;
+        dp = false;
+      }
     }
   }
 	
@@ -358,10 +374,18 @@ void CGameContext::StartVote(const char *pDesc, const char *pCommand, const char
 		char aBuf[512];
 
     int seconds_remaining;
+    if (dp)
+    {
+      seconds_remaining = g_Config.m_SvzCatchPlusMinMapPlayerTime * 60 - diffplayer;
+      str_format(aBuf, sizeof(aBuf), "Vote failed. Players must be %d minutes in game before voting. %d minutes and %d seconds remaining.", g_Config.m_SvzCatchPlusMinMapPlayerTime,seconds_remaining/60,seconds_remaining%60);
 
-    seconds_remaining = g_Config.m_SvzCatchPlusMinMapTime * 60 - diff;
+    }
+    else
+    {
+      seconds_remaining = g_Config.m_SvzCatchPlusMinMapTime * 60 - diff;
+      str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d minutes and %d seconds remaining.", g_Config.m_SvzCatchPlusMinMapTime,seconds_remaining/60,seconds_remaining%60);
+    }
 
-		str_format(aBuf, sizeof(aBuf), "Vote failed. Map votes only after %d minutes. %d minutes and %d seconds remaining.", g_Config.m_SvzCatchPlusMinMapTime,seconds_remaining/60,seconds_remaining%60);
 		SendChat(-1, CGameContext::CHAT_ALL, aBuf);
 	}
 }
@@ -681,7 +705,7 @@ void CGameContext::OnClientConnected(int ClientID)
 	// Check which team the player should be on
 	const int StartTeam = g_Config.m_SvTournamentMode ? TEAM_SPECTATORS : m_pController->GetAutoTeam(ClientID);
 
-	m_apPlayers[ClientID] = new(ClientID) CPlayer(this, ClientID, StartTeam);
+  m_apPlayers[ClientID] = new(ClientID) CPlayer(this, ClientID, StartTeam);
 	//players[client_id].init(client_id);
 	//players[client_id].client_id = client_id;
 
@@ -703,6 +727,9 @@ void CGameContext::OnClientConnected(int ClientID)
 	CNetMsg_Sv_Motd Msg;
 	Msg.m_pMessage = g_Config.m_SvMotd;
 	Server()->SendPackMsg(&Msg, MSGFLAG_VITAL, ClientID);
+
+  time(&m_apPlayers[ClientID]->m_joinTime);
+
 }
 
 void CGameContext::OnClientDrop(int ClientID, const char *pReason)
@@ -962,7 +989,7 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 		if(aCmd[0])
 		{
 			SendChat(-1, CGameContext::CHAT_ALL, aChatmsg);
-			StartVote(aDesc, aCmd, pReason);
+			StartVote(aDesc, aCmd, pReason,pPlayer);
 			pPlayer->m_Vote = 1;
 			pPlayer->m_VotePos = m_VotePos = 1;
 			m_VoteCreator = ClientID;
@@ -1815,7 +1842,10 @@ void CGameContext::OnInit(/*class IKernel *pKernel*/)
 		m_pController = new CGameController_zCatch(this);
 	else
 		m_pController = new CGameControllerDM(this);*/
-	m_pController = new CGameController_zCatch(this);
+  if (str_find_nocase(g_Config.m_SvGametype, "iLMS") == g_Config.m_SvGametype)
+    m_pController = new CGameController_iLMS(this);
+  else
+  	m_pController = new CGameController_zCatch(this);
 
 	// setup core world
 	//for(int i = 0; i < MAX_CLIENTS; i++)
