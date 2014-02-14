@@ -96,7 +96,10 @@ int CGameController_zCatch::OnCharacterDeath(class CCharacter *pVictim, class CP
 	if(!pKiller)
 		return 0;
 
-	int VictimID = pVictim->GetPlayer()->GetCID();
+  if (g_Config.m_SvzCatchPlusShowCapturedPlayers == 1)
+    pVictim->GetPlayer()->m_Score = 0;
+
+  int VictimID = pVictim->GetPlayer()->GetCID();
 
 	if(pKiller != pVictim->GetPlayer())
 	{
@@ -104,9 +107,6 @@ int CGameController_zCatch::OnCharacterDeath(class CCharacter *pVictim, class CP
 		if(pVictim->GetPlayer()->m_Wallshot && g_Config.m_SvWallshot == 1)
 			pKiller->m_Kills += g_Config.m_SvWallshotBonus; //pKiller->m_Multiplier;
 		
-		if (g_Config.m_SvzCatchPlusShowCapturedPlayers == 1)
-      pVictim->GetPlayer()->m_Score = 0;
-
 		pVictim->GetPlayer()->m_Deaths++;
 		if(pVictim->GetPlayer()->m_Wallshot && g_Config.m_SvWallshot == 1)
 			pVictim->GetPlayer()->m_Deaths += g_Config.m_SvWallshotBonus; //pKiller->m_Multiplier;
@@ -149,8 +149,8 @@ int CGameController_zCatch::OnCharacterDeath(class CCharacter *pVictim, class CP
 				GameServer()->m_apPlayers[i]->m_CaughtBy = CPlayer::ZCATCH_NOT_CAUGHT;
 				GameServer()->m_apPlayers[i]->SetTeamDirect(GameServer()->m_pController->ClampTeam(1));
 
-				if(pKiller != pVictim->GetPlayer())
-					pKiller->m_Score++;
+				//if(pKiller != pVictim->GetPlayer())
+					//pKiller->m_Score++;
 			}
 		}
 	}

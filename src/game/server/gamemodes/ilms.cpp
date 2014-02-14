@@ -17,6 +17,7 @@ CGameController_iLMS::CGameController_iLMS(class CGameContext *pGameServer) :
 	m_PlayerCount = 0;
 	m_ActivePlayerCount = 0;
 	m_iLMS_enabled = true;
+  m_points = 0;
 }
 
 void CGameController_iLMS::Tick()
@@ -101,6 +102,10 @@ int CGameController_iLMS::OnCharacterDeath(class CCharacter *pVictim, class CPla
 		return 0;
 
 	int VictimID = pVictim->GetPlayer()->GetCID();
+  
+  pVictim->GetPlayer()->m_Score = m_points;
+
+  m_points++;
 
 	if(pKiller != pVictim->GetPlayer())
 	{
@@ -155,8 +160,8 @@ int CGameController_iLMS::OnCharacterDeath(class CCharacter *pVictim, class CPla
 
 				if(pKiller != pVictim->GetPlayer())
 				{
-          pVictim->GetPlayer()->m_Score = m_points;
-          m_points++;
+          pVictim->GetPlayer()->m_Score = pVictim->GetPlayer()->m_Score;
+          //m_points++;
         }
 			}
 		}
