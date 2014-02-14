@@ -85,7 +85,7 @@ void CGameController_iLMS::DoWincheck()
 				if(GameServer()->m_apPlayers[i] && GameServer()->m_apPlayers[i]->GetTeam() != TEAM_SPECTATORS)
 				{
           //GameServer()->m_apPlayers[i]->m_Score += g_Config.m_SvBonus;
-          GameServer()->m_apPlayers[i]->m_Score = 100;
+          GameServer()->m_apPlayers[i]->m_Score = m_points;
         }
 			}
 			EndRound();
@@ -155,7 +155,8 @@ int CGameController_iLMS::OnCharacterDeath(class CCharacter *pVictim, class CPla
 
 				if(pKiller != pVictim->GetPlayer())
 				{
-          //pKiller->m_Score++;
+          pVictim->GetPlayer()->m_Score = m_points;
+          m_points++;
         }
 			}
 		}
@@ -184,6 +185,7 @@ void CGameController_iLMS::OnPlayerInfoChange(class CPlayer *pP)
 void CGameController_iLMS::StartRound()
 {
 	IGameController::StartRound();
+  m_points = 0;
 	m_iLMS_enabled = true;
 	for(int i = 0; i < MAX_CLIENTS; i++)
 	{

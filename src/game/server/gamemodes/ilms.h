@@ -13,7 +13,7 @@ class CGameController_iLMS: public IGameController
 	int m_PlayerCount;
 	int m_ActivePlayerCount;
 	bool m_iLMS_enabled;
-	
+	int m_points;
 public:
 	CGameController_iLMS(class CGameContext *pGameServer);
 	virtual void Tick();
